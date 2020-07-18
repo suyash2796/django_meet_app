@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+##importing my view
+from main_web.views import greet, get_current_time
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', greet),
+    path('now', get_current_time )
 ]
