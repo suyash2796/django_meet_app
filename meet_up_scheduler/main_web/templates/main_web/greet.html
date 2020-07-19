@@ -1,0 +1,17 @@
+
+{%extends 'main_web/index.html'%}
+{%block greet%}
+<h1>Welcome To the Meet-up Planner Website !!!</h1>
+
+<b> Currently we have {{nu_seminars}} seminars planned:</b>
+<br>
+<ul>
+    {%for i in seminars%}
+    <li>  
+        <a href = "{% url 'meet' i.id %}">{{i.title}}</a>    
+    </li>
+    {%endfor%}
+</ul>
+<br>
+<p> <a href = "{% url 'cities' %}">Check all cities where upcoming meetups are going to held : </a></p>
+{%endblock%}

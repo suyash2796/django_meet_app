@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <title> {{meetup.title}}</title>
-    
-<body>
-
+{%extends 'main_web/index.html'%}
+{%block meetup_details%}
 <h1>{{meetup.title}}</h1>
 <p> City : {{meetup.city.city}}</p>
 <p> Address : {{meetup.city.address}}</p>
@@ -12,6 +8,4 @@
 
 <br>
 <p><a href = "{% url 'home' %}""> home</a></p>
-
-</body>
-</html>
+{%endblock%}
