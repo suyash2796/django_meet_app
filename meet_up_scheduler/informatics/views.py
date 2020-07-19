@@ -8,3 +8,7 @@ from .models import Seminar
 def meetup_detail(request, id):
     meetup =  get_object_or_404(Seminar, pk=id)
     return render(request,"main_web/meetup.html",{"meetup":meetup})
+
+def get_cities(request):
+    return render(request,"main_web/cities.html",{"cities":Seminar.objects.all()})
+

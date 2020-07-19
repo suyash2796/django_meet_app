@@ -18,11 +18,12 @@ from django.urls import path
 
 ##importing my view
 from main_web.views import greet, get_current_time
-from informatics.views import meetup_detail
+from informatics.views import meetup_detail, get_cities
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', greet),
+    path('', greet, name = 'home'),
     path('now', get_current_time ),
-    path('meetup/<int:id>', meetup_detail)
+    path('cities', get_cities, name = 'cities' ),
+    path('meetup/<int:id>', meetup_detail, name = "meet")
 ]
