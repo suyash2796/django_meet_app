@@ -1,17 +1,20 @@
 {% extends 'main_web/index.html'%}
 
+
 {% block cities%}
+<section class="page-section bg-primary text-white mb-0" id="about" style = "margin-top: 6rem;">
+    <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white">Beautiful Cities !!!</h2>
+    </br>
+</br>
+            {%for i in cities%}
+            <center><p class="lead">{{i.city.city}} </p></center>
+            {%endfor%}
 
-<h1>Beautiful Cities !!!</h1>
-<b> Those are next!</b>
-<br>
-<ul>
-    {%for i in cities%}
-    <li>  
-        {{i.city.city}}</a>    
-    </li>
-    {%endfor%}
-</ul>
-<p><a href = "{% url 'home' %}""> home</a></p>
-
+        
+        
+        <center><a href = "{% url 'home' %}" style = "color:white"> home</a></center>
+    </div>
+</section>
 {%endblock%}

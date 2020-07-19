@@ -1,17 +1,36 @@
 
 {%extends 'main_web/index.html'%}
-{%block greet%}
-<h1>Welcome To the Meet-up Planner Website !!!</h1>
+{%load static%}
 
-<b> Currently we have {{nu_seminars}} seminars planned:</b>
+
+
+{%block greet%}
+<!-- Portfolio Section-->
+<section class="page-section portfolio" id="portfolio" style = "margin-top: 6rem;">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Upcoming Meetups</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <h3 class="page-section-heading text-center text-uppercase text-secondary mb-0">{{nu_seminars}}</h3>
+        <br>
+        <br><!-- Portfolio Grid Items-->
+            
+            {%for i in seminars%}
+
+                 <p class ="lead"  ><a href = "{% url 'meet' i.id %}">{{i.title}}</a> </p>
+
+            {%endfor%}
+
+    </div>
+</section>
 <br>
-<ul>
-    {%for i in seminars%}
-    <li>  
-        <a href = "{% url 'meet' i.id %}">{{i.title}}</a>    
-    </li>
-    {%endfor%}
-</ul>
 <br>
-<p> <a href = "{% url 'cities' %}">Check all cities where upcoming meetups are going to held : </a></p>
+<br>
+<br>
 {%endblock%}
+
