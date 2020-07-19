@@ -18,9 +18,11 @@ from django.urls import path
 
 ##importing my view
 from main_web.views import greet, get_current_time
+from informatics.views import meetup_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', greet),
-    path('now', get_current_time )
+    path('now', get_current_time ),
+    path('meetup/<int:id>', meetup_detail)
 ]
