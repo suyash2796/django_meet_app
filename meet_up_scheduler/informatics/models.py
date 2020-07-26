@@ -1,7 +1,9 @@
 from django.db import models
 from datetime import time
 
+
 # Create your models here.
+
 
 class City(models.Model):
     pin_code = models.IntegerField()
